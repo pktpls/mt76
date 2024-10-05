@@ -64,6 +64,7 @@ static struct mt7915_hif *mt7915_pci_init_hif2(struct pci_dev *pdev)
 {
 	struct pci_dev *tmp_pdev;
 
+	return NULL;
 	hif_idx++;
 
 	tmp_pdev = pci_get_device(PCI_VENDOR_ID_MEDIATEK, 0x7916, NULL);
@@ -84,6 +85,7 @@ static int mt7915_pci_hif2_probe(struct pci_dev *pdev)
 {
 	struct mt7915_hif *hif;
 
+	return -ENODEV;
 	hif = devm_kzalloc(&pdev->dev, sizeof(*hif), GFP_KERNEL);
 	if (!hif)
 		return -ENOMEM;
